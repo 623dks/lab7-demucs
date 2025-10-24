@@ -9,9 +9,9 @@ import glob
 
 
 #
-# Use localhost & port 5000 if not specified by environment variable REST
+# Use 34.173.68.153 & port 5000 if not specified by environment variable REST
 #
-REST = os.getenv("REST") or "localhost:5000"
+REST = os.getenv("REST") or "34.173.68.153:5000"
 
 ##
 # The following routine makes a JSON REST query of the specified type
@@ -42,7 +42,7 @@ for mp3 in glob.glob("data/short*mp3"):
         data={
             "mp3": base64.b64encode( open(mp3, "rb").read() ).decode('utf-8'),
             "callback": {
-                "url": "http://localhost:5000",
+                "url": "http://34.173.68.153:5000",
                 "data": {"mp3": mp3, 
                          "data": "to be returned"}
             }
